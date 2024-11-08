@@ -10,9 +10,18 @@
 	  gnupg
 	  tmux
     pulsemixer
+    inconsolata
+    pass
+    tree
+    gitflow
 
 	  # midst of winter
     brave
+    inkscape
+    vscode
+    inkscape
+    gimp
+    
   ];
 
   programs.git = {
