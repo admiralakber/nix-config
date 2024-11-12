@@ -127,22 +127,39 @@
   git
   vim
   nano
+  emacs
   wget
   curl
   grim
   slurp
   wl-clipboard
+  wf-recorder
   mako
   pulseaudio
   udisks
   cryptsetup
   ];
 
-  environment.variables.EDITOR = "vim";
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Inconsolata" ]; })
+];
+
+  environment.variables.EDITOR = "emacsclient -nw";
+  environment.pathsToLink = [ "/share/zsh" ];
+
+  programs.zsh.enable = true;
+  environment.shells = with pkgs; [ zsh ];
+  users.users.brat.shell = pkgs.zsh;
+
   programs.light.enable = true;
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
+
+services.emacs = {
+enable = true;
+package = pkgs.emacs;
+};
     
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

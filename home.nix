@@ -4,16 +4,39 @@
   home.username = "brat";
   home.homeDirectory = "/home/brat";
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    history = {
+      size = 10000;
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "pass" ];
+      theme = "darkblood";
+    };
+  };
+
   home.packages = with pkgs; [
 	  # invincible summer
-	  emacs
-	  gnupg
-	  tmux
+    gnupg
+    tmux
     pulsemixer
-    inconsolata
     pass
     tree
     gitflow
+    elixir-ls
+    elixir
+    i3status
 
 	  # midst of winter
     brave
@@ -21,7 +44,6 @@
     vscode
     inkscape
     gimp
-    
   ];
 
   programs.git = {
