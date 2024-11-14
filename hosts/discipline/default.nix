@@ -19,5 +19,22 @@
   networking.networkmanager.enable = true;
   networking.hostName = hostName;
 
+  # Virtualisation and Containerisation support
+  virtualisation = {
+    libvirtd.enable = true;
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    podman-compose
+    virt-manager
+    qemu
+  ];
+
   system.stateVersion = "24.05";
 }
