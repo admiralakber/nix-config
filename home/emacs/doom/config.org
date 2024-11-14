@@ -1,0 +1,190 @@
+#+title: aqeel's doom emacs config.org
+#+author: Aqeel Akber
+#+date: <2024-07-04 Thu 13:32>
+#+lastmod: [2024-11-14 Thu 15:21]
+
+* top matter
+#+begin_src elisp
+;;; tangled from $DOOMDIR/config.org -*- mode: emacs-lisp; lexical-binding: t; -*
+#+end_src
+
+* identity
+#+begin_src elisp
+(setq user-full-name "Aqeel Akber"
+      user-mail-address "aqeel@aqeelakber.com"
+      mail-host-address "aqeelakber.com")
+#+end_src
+
+* aesthetics
+** backups
+#+begin_src elisp
+(setq version-control t        ;; OpenVMS-esque
+      backup-by-copying t      ;; Copy-on-write-esque
+      kept-new-versions 64     ;; Indeliable-ink-esque
+      kept-old-versions 0      ;;
+      delete-old-versions nil  ;;
+      )
+
+(setq backup-directory-alist   ;; Save backups in $(pwd)/.bak
+      '(("." . ".bak"))        ;;
+      )
+#+end_src
+** colour theme
+#+begin_src elisp
+(setq doom-theme 'leuven)
+#+end_src
+** line numbers
+#+begin_src elisp
+(setq display-line-numbers-type 't)
+#+end_src
+
+* org-mode
+** base setup
+#+begin_src elisp
+(after! org
+  (setq org-log-done t)
+  (setq org-log-into-drawer t)
+
+  (setq org-directory "~/org/")
+  (setq org-agenda-files '("~/org/" "~/org/dsq/"))
+  ;;(add-to-list 'org-agenda-files org-journal-dir)
+  (setq org-journal-enable-agenda-integration t)
+  (setq org-export-with-broken-links 'mark)
+  )
+#+end_src
+** attachments
+#+begin_src elisp
+(after! org
+  (setq org-attach-directory "attach/") ;; attachments in directory
+  )
+#+end_src
+** agenda view
+#+begin_src elisp
+(after! org
+  (setq org-agenda-start-on-weekday t) ;; start on monday
+  (setq org-agenda-include-diary t) ;; include holidays sunsets, etc
+  (setq org-agenda-span 28) ;; show four weeks
+  (setq org-agenda-start-day "-7d") ;; but start from last week
+  )
+#+end_src
+** tasks
+#+begin_src elisp
+(after! org
+  (setq org-log-done 'note
+        org-log-redeadline 'note
+        org-log-reschedule 'note
+        )
+  )
+#+end_src
+
+** refile options
+#+begin_src elisp
+(after! org
+  (setq org-log-refile 'note)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  )
+#+end_src
+** encryption
+#+begin_src elisp
+(after! org
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance '("crypt"))
+  (setq org-crypt-key "")       ;; Set CRYPTKEY property to use id
+  (setq auto-save-default nil)  ;; security flaw when using encryption
+  )
+#+end_src
+** last modified
+Update Org files with last modified date when =#+lastmod:= is available.
+
+Note, changing the variable =time-stamp-format= at global scope is controversial according to [[https://www.emacswiki.org/emacs/TimeStamp][Emacs Wiki: Time Stamp]].
+#+begin_src elisp
+(setq time-stamp-active t
+      time-stamp-start "#\\+lastmod:[ \t]*"
+      time-stamp-end "$"
+      time-stamp-format "[%04Y-%02m-%02d %a %H:%M]")
+(add-hook 'before-save-hook 'time-stamp nil)
+#+end_src
+** org-octopress
+#+begin_src elisp
+(use-package! org-octopress
+  :config
+  (setq org-octopress-directory-top "~/blog/src"
+        org-octopress-directory-posts "~/blog/src/_posts"
+        org-octopress-directory-org-top "~/blog/src"
+        org-octopress-directory-org-posts "~/blog/src/blog"
+        org-octopress-setup-file "~/blog/src/setupfile.org"
+        )
+  )
+#+end_src
+
+** org-roam
+Org-roam heavily relies on the Zettelkasten Method of note taking. It will take some getting used to and likely isn't a single solution to a second brain but is a well established and mature method and project. https://www.orgroam.com
+
+#+begin_src elisp
+(use-package! org-roam
+  :config
+  (setq org-roam-database-connector 'sqlite-builtin)
+  (setq org-roam-directory (file-truename "~/org/org-roam"))
+  ;; org-roam-dailies
+  (setq org-roam-dailies-directory "daily/")
+  (setq org-roam-dailies-capture-templates
+        '(("d" "default" entry
+           "* %?"
+           :target (file+head "%<%Y-%m-%d>.org"
+                              "#+title: %<%Y-%m-%d>\n"))))
+    (org-roam-db-autosync-mode)
+  )
+#+end_src
+
+Org-roam protocol allows integration with other applications.
+
+#+begin_src elisp
+(use-package! org-roam-protocol)
+#+end_src
+
+Org-roam export fixes ID's for clean export to HTML.
+
+#+begin_src elisp
+(use-package! org-roam-export)
+#+end_src
+* email
+We use notmuch. It's just what we do.
+
+#+begin_src elisp
+(use-package! notmuch
+  :init
+  (setq message-directory "~/mail")
+  (setq send-mail-function 'sendmail-send-it)
+  ;; brute force all the fixes over the years to send from correct email account
+  (setq message-sendmail-f-is-eval 't)
+  (setq message-sendmail-extra-arguments '("--read-envelope-from"))
+  (setq mail-specify-envelope-from 't)
+  (setq mail-envelope-from 'header)
+  (setq message-sendmail-envelope-from 'header)
+  :config
+  (setq notmuch-show-logo nil)
+  ;; writing emails
+  (setq message-default-mail-headers "Cc: \nBcc: \n") ;; always show bcc
+  (setq notmuch-always-prompt-for-sender 't)
+  ;; pgp support
+  (setq mml-secure-openpgp-sign-with-sender t)
+  (add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)
+
+  (setq notmuch-crypto-process-mime t)
+  ;; save sent mail in the folders depending on from address
+  (setq notmuch-fcc-dirs '(("aqeel.akber@gmail.com" . "gmail/sent")
+                           ("aqeel@aqeelakber.com" . "aqeel/sent")
+                           ("aqeel.akber@anu.edu.au" . "anu/sent")
+                           ))
+    )
+#+end_src
+
+* TODO company
+Sadly, I still can't get this to play super nice with snippets, nor the way I want. I usually do like seeing a list of candidates of text as I type to provide more stimulation. This includes when typing prose.
+#+begin_src elisp
+;; (global-company-mode 't)
+;; (setq company-idle-delay 0
+;;       company-echo-delay 0
+
+;;       company-minimum-prefix-length 2)
+#+end_src

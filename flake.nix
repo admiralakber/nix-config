@@ -1,32 +1,41 @@
 {
-  description = "A simple NixOS flake";
+  description = "NixOS configuration of Aqeel Akber <aqeel@aqeelakber.com>";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-
     home-manager = {
     	url = "github:nix-community/home-manager/release-24.05";
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    # Please replace my-nixos with your hostname
-    nixosConfigurations.discipline = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+    nixosConfigurations = {
+    admiral-sway = let
+      username = "brat";
+      hostName = "discipline";
+      userFullName = "Aqeel Akber";
+      userEmail = "aqeel@aqeelakber.com";
+      specialArgs = {inherit username hostName userFullName userEmail;};
+    in
+      nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        system = "x86_64-linux";
 
-	      home-manager.nixosModules.home-manager
-	      {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.users.brat = import ./home.nix;
-	      }
-      ];
+        modules = [
+          ./hosts/${hostName}
+          ./users/${username}/nixos.nix
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.extraSpecialArgs = inputs // specialArgs;
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+
+        ];
+      };
     };
   };
 }
