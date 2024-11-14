@@ -17,13 +17,15 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       foot # fast wayland term
+      mako # wayland notification manager
       wmenu # wayland launcher
-      grim # wayland screenies
-      slurp # wayland select area
+      i3status # good enough batteries included
+      swaylock # lock screen
+      swayidle # idle
       wl-clipboard # wayland cli clipboard
       wf-recorder # wayland screen recording
-      mako # wayland notification manager
-      i3status # good enough batteries included
+      grim # wayland screenies
+      slurp # wayland select area
       udisks # udisksctl
     ];
   };
