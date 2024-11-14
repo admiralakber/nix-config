@@ -85,13 +85,13 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      (nerdfonts.override { fonts = ["Inconsolata"]; })
+      (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono" "Inconsolata"]; })
     ];
-    enableDefaultPackages = false;
+    enableDefaultPackages = false; # set to false for user specified fonts
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
       sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["Inconsolata Nerd Font" "Noto Color Emoji"];
+      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
   };
