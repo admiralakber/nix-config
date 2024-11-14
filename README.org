@@ -1,6 +1,6 @@
 #+title: Aqeel's NixOS Configuration
 #+author: Aqeel Akber <aqeel@aqeelakber>
-#+lastmod: [2024-11-14 Thu 17:05]
+#+lastmod: [2024-11-14 Thu 17:09]
 
 
 * Acknowledgments
@@ -14,7 +14,7 @@ This configuration is a modification of [[https://github.com/ryan4yin/nix-config
 
 3) *Suggestions:* I love collaboration. I love Linux. Have a tool that I think I should know about? Have an idea on how to improve this configuration? lmk as an issue!
 
-4) *Forking:* MIT. Don't hestitate. See section [[Making it yours]].
+4) *Forking:* MIT. Don't hestitate. See section [[*Making it yours][Making it yours]].
 
 5) *Making it yours:* My nix-foo is not good enough to know how to separate what you would need to edit to make the configuration your own. The next section is a checklist of what you'd likely want to change.
 
