@@ -17,6 +17,7 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       foot # fast wayland term
+      wmenu # wayland launcher
       grim # wayland screenies
       slurp # wayland select area
       wl-clipboard # wayland cli clipboard
