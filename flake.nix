@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations = {
-    admiral-sway = let
+    discipline = let
       username = "brat";
       hostName = "discipline";
       userFullName = "Aqeel Akber";
