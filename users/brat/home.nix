@@ -2,7 +2,10 @@
 
   imports = [
     ../../home/core.nix
-
+    ../../home/shell
+    ../../home/emacs
+    ../../home/sway
+    ../../home/programs
   ];
 
   programs.git = {
