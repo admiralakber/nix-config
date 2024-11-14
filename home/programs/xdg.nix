@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, ... }: let
   browser = ["brave.desktop"];
 
   # XDG MIME types
