@@ -1,13 +1,19 @@
 #+title: Aqeel's NixOS Configuration
 #+author: Aqeel Akber <aqeel@aqeelakber>
-#+lastmod: [2024-11-14 Thu 17:09]
+#+lastmod: [2024-11-14 Thu 17:15]
 
+* tl;dr
+- sway
+- emacs
+- oh-my-zsh
+- brave
+- spotify
 
 * Acknowledgments
 
 This configuration is a modification of [[https://github.com/ryan4yin/nix-config/tree/i3-kickstarter][ryan4yin's i3 kickstarter]]. The structure is identical, but the configuration is different.
 
-* tl;dr
+* tl;dr once more
 1) *Software:* I like my systems basic, close to defaults, predictable, and with the tried and tested tools that are everywhere. This way I keep my skills transferrable across systems.
 
 2) *Hardware:* I have only tested this on my [[https://frame.work][Framework]] 13 Ryzen 7040. Unsponsored, I highly recommend a Framework for your next laptop (or even desktop if you just buy the mobo).
