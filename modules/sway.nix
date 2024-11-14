@@ -20,7 +20,7 @@
       grim # wayland screenies
       slurp # wayland select area
       wl-clipboard # wayland cli clipboard
-      wl-recorder # wayland screen recording
+      wf-recorder # wayland screen recording
       mako # wayland notification manager
       i3status # good enough batteries included
       udisks # udisksctl
