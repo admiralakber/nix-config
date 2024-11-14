@@ -14,7 +14,7 @@
     # utils
     pass
     pandoc
-
+    asciinema
   ];
 
 }
