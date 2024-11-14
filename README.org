@@ -1,6 +1,6 @@
 #+title: Aqeel's NixOS Configuration
 #+author: Aqeel Akber <aqeel@aqeelakber>
-#+lastmod: [2024-11-14 Thu 15:36]
+#+lastmod: [2024-11-14 Thu 17:05]
 
 
 * Acknowledgments
@@ -19,6 +19,8 @@ This configuration is a modification of [[https://github.com/ryan4yin/nix-config
 5) *Making it yours:* My nix-foo is not good enough to know how to separate what you would need to edit to make the configuration your own. The next section is a checklist of what you'd likely want to change.
 
 6) *Future:* (a) Make a matching/familiar configuration for servers, single board computers, and support ARM and RISC V.
+
+7) *Example Usage:* Clone the repo. Link it to =/etc/nixos=. Run =sudo nixos-rebuild switch=.
 
 * Making it yours
 One day, I'd like to make this is all configurable in one file. If you can help with that, please reach out.
@@ -55,6 +57,8 @@ For now, use the checklist below of the least of things you need to edit.
     - [ ] Edit/replace [[home/emacs/doom/config.org]] etc
   - Sway
     - [ ] Edit/replace [[home/sway/config]]
+
+You might also need to edit [[file:flake.nix::discipline = let]] to your hostname of your current configuration. There is probably a better way of doing this.
 
 
 * Licence
