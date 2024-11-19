@@ -59,3 +59,5 @@
   (:host github
    :repo "admiralakber/org-octopress"
    :branch "master"))
+
+(package! gptel)
