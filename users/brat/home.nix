@@ -12,5 +12,8 @@
     enable = true;
     userName = userFullName;
     userEmail = userEmail;
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
