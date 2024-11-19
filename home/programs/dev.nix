@@ -1,9 +1,17 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    gitflow
+    # 3d printing
     orca-slicer
     openscad
+
+    # env
+    direnv
+
+    # coding
+    gitflow
+    koji
+    git-cliff
   ];
 
   programs.git = {
