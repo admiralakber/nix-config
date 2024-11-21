@@ -12,6 +12,9 @@
     gitflow
     koji
     git-cliff
+
+    # artificial intelligence
+    ollama
   ];
 
   programs.git = {
