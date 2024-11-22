@@ -1,9 +1,13 @@
-{ pkgs, ... }: {
-
+{ pkgs, inputs, ... }:
+  let
+  unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+  in {
   home.packages = with pkgs; [
     # 3d printing
-    orca-slicer
-    openscad
+    unstablePkgs.orca-slicer
+    #openscad
+    #openscad-unstable
+    unstablePkgs.openscad-unstable
 
     # env
     direnv
@@ -14,11 +18,10 @@
     git-cliff
 
     # artificial intelligence
-    ollama
+    unstablePkgs.ollama
   ];
 
   programs.git = {
     enable = true;
   };
-
-}
+  }
