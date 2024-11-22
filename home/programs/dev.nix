@@ -18,10 +18,13 @@
     git-cliff
 
     # artificial intelligence
-    unstablePkgs.ollama
+    #unstablePkgs.ollama
+    unstablePkgs.ollama-rocm
+    unstablePkgs.amdgpu_top
   ];
 
   programs.git = {
     enable = true;
   };
+
   }

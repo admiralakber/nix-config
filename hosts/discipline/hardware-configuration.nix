@@ -8,10 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  # latest linux kernel for best gpu drivers
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+
+  # AMD APU, Set 48GiB GTT Memory
+  # Based on 4k pages
+  # 48 * 1024**3 / 4096 = 12582912 pages
+  boot.extraModprobeConfig = ''
+  options ttm pages_limit=12582912
+  options ttm pages_pool_size=12582912
+  '';
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/40bb6ea7-6222-4182-b828-3045d1af4741";
@@ -37,4 +47,13 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+
+  # https://www.reddit.com/r/ROCm/comments/1b36sjj/support_for_gfx1103/
+  # https://github.com/ollama/ollama/blob/main/docs/gpu.md
+  # Force the Radeon 780M (GFX1103) to appear as a PRO W7900 (or similar)
+  # for some sort of (?) rocm support.
+  environment.sessionVariables = {
+    HSA_OVERRIDE_GFX_VERSION = "11.0.1";
+  };
 }

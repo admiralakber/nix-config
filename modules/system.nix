@@ -8,7 +8,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = userFullName;
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["networkmanager" "wheel" "video" "render"];
     shell = pkgs.zsh;
   };
 
