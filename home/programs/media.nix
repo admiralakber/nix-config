@@ -6,6 +6,7 @@
     spotify
     gimp
     inkscape
+    playerctl
   ];
 
   programs = {
