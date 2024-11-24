@@ -48,6 +48,9 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  # Firmware update manager
+  services.fwupd.enable = true;
+
 
   # https://www.reddit.com/r/ROCm/comments/1b36sjj/support_for_gfx1103/
   # https://github.com/ollama/ollama/blob/main/docs/gpu.md
