@@ -8,6 +8,7 @@
     #openscad
     #openscad-unstable
     unstablePkgs.openscad-unstable
+    unstablePkgs.freecad-wayland
 
     # env
     direnv
