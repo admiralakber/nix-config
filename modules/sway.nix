@@ -18,6 +18,7 @@
     extraPackages = with pkgs; [
       foot # fast wayland term
       mako # wayland notification manager
+      libnotify # notify-send
       wmenu # wayland launcher
       i3status # good enough batteries included
       swaylock # lock screen
