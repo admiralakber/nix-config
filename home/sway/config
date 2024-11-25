@@ -276,4 +276,7 @@ input type:touchpad {
 # https://github.com/swaywm/sway/issues/5732
 exec systemctl --user import-environment
 
+# notifications
+exec mako
+
 include /etc/sway/config.d/

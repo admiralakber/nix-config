@@ -1,0 +1,7 @@
+[center]
+anchor=center
+margin=0
+padding=10
+border-size=2
+font=Sans 16
+default-timeout=2000
