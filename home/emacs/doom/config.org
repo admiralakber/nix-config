@@ -1,7 +1,7 @@
 #+title: aqeel's doom emacs config.org
 #+author: Aqeel Akber
 #+date: <2024-07-04 Thu 13:32>
-#+lastmod: [2024-11-17 Sun 09:19]
+#+lastmod: [2024-11-25 Mon 10:59]
 
 * top matter
 #+begin_src elisp
@@ -46,7 +46,7 @@
   (setq org-log-into-drawer t)
 
   (setq org-directory "~/org/")
-  (setq org-agenda-files '("~/org/" "~/org/dsq/"))
+  (setq org-agenda-files '("~/org/" "~/org/dsq/" "~/org/aqeel-the-human/"))
   ;;(add-to-list 'org-agenda-files org-journal-dir)
   (setq org-journal-enable-agenda-integration t)
   (setq org-export-with-broken-links 'mark)
