@@ -17,7 +17,7 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       foot # fast wayland term
-      mako # wayland notification manager
+      swaynotificationcenter # beautiful notification manger/daemon
       libnotify # notify-send
       wmenu # wayland launcher
       i3status # good enough batteries included

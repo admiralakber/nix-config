@@ -277,6 +277,7 @@ input type:touchpad {
 exec systemctl --user import-environment
 
 # notifications
-exec mako
+# https://github.com/ErikReider/SwayNotificationCenter
+exec swaync
 
 include /etc/sway/config.d/
