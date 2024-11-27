@@ -11,7 +11,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "pass" ];
+      plugins = [ "pass" "direnv" ];
       theme = "darkblood";
     };
   };
