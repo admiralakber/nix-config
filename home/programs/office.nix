@@ -2,8 +2,8 @@
 
   home.packages = with pkgs; [
     zathura
-    lyx
     ispell
+    libreoffice-fresh
   ];
 
 }

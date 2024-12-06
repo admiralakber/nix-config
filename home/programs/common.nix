@@ -15,6 +15,7 @@
     pass
     pandoc
     asciinema
+    tree
   ];
 
 }
