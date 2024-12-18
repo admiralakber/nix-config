@@ -16,6 +16,8 @@
     pandoc
     asciinema
     tree
+    rclone
+    restic
   ];
 
 }
