@@ -18,6 +18,7 @@
     tree
     rclone
     restic
+    ripgrep
   ];
 
 }
