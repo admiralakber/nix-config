@@ -281,6 +281,6 @@ exec systemctl --user import-environment
 exec swaync
 
 # Set wallpaper
-swaymsg output '*' bg ~/.config/sway/wallpaper.jpg
+output '*' bg ~/.config/sway/wallpaper.jpg fill
 
 include /etc/sway/config.d/
