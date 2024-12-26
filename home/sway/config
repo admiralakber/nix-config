@@ -280,4 +280,7 @@ exec systemctl --user import-environment
 # https://github.com/ErikReider/SwayNotificationCenter
 exec swaync
 
+# Set wallpaper
+swaymsg output '*' bg ~/.config/sway/wallpaper.jpg
+
 include /etc/sway/config.d/
