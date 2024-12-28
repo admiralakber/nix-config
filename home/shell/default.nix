@@ -11,6 +11,4 @@
     TERM = "xterm-256color";
   };
 
-  home.file.".config/foot/foot.ini".source = ./foot.ini;
-
 }
