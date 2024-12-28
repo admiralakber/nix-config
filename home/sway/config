@@ -279,6 +279,7 @@ exec systemctl --user import-environment
 # notifications
 # https://github.com/ErikReider/SwayNotificationCenter
 exec swaync
+bindsym $mod+k exec swaync-client -t -sw
 
 # Set wallpaper
 output '*' bg ~/.config/sway/wallpaper.jpg fill
