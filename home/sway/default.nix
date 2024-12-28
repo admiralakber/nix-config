@@ -6,5 +6,5 @@
 
   home.file.".config/sway/wallpaper.jpg".source = ./wallpaper.jpg;
   home.file.".config/sway/config".source = ./config;
-  home.file.".config/picom/picom.conf" = ./picom.conf
+  home.file.".config/picom/picom.conf" = ./picom.conf;
 }
