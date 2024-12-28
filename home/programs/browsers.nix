@@ -1,5 +1,9 @@
 { config, pkgs, username, ... }: {
 
+  home.packages = with pkgs; [
+    python312Packages.adblock
+  ];
+
   programs = {
     chromium = {
       enable = true;
@@ -22,8 +26,20 @@
       profiles.${username} = {};
     };
 
+    # qutebroser
     qutebrowser = {
-     enable = true;
-   };
+      enable = true;
+      settings = {
+        "auto_save.session" = true;
+        "content.blocking.method" = "both";
+        "content.blocking.adblock.lists" = [
+          "https://easylist.to/easylist/easylist.txt"
+          "https://easylist.to/easylist/easyprivacy.txt"
+          "https://secure.fanboy.co.nz/fanboy-annoyance.txt"
+          "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt"
+          "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt"
+        ];
+      };
+    };
   };
 }
