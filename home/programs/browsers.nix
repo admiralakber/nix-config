@@ -21,6 +21,9 @@
       enable = true;
       profiles.${username} = {};
     };
-  };
 
+    qutebrowser = {
+     enable = true;
+   };
+  };
 }
