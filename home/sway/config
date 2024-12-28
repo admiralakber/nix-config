@@ -284,4 +284,10 @@ bindsym $mod+k exec swaync-client -t -sw
 # Set wallpaper
 output '*' bg ~/.config/sway/wallpaper.jpg fill
 
+# qutebrowser
+for_window [app_id="qutebrowser"] border none
+
+# compositing
+exec_always --no-startup-id picom --experimental-backends
+
 include /etc/sway/config.d/
