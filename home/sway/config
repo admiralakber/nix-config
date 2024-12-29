@@ -209,6 +209,22 @@ mode "resize" {
 }
 bindsym $mod+p mode "resize"
 
+mode "opacity-mode" {
+    # Opacity levels: 100, 90, 85, 80, 75
+    bindsym a exec swaymsg "opacity 1"  # Full opacity
+    bindsym r exec swaymsg "opacity 0.9"   # 90% opacity
+    bindsym s exec swaymsg "opacity 0.85"   # 85% opacity
+    bindsym t exec swaymsg "opacity 0.8"   # 80% opacity
+    bindsym d exec swaymsg "opacity 0.75"   # 75% opacity
+
+    # Exit the mode
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# Create a mode to cycle through opacity levels
+bindsym $mod+y mode "opacity-mode"
+
 #
 # Status Bar:
 #
@@ -286,8 +302,8 @@ bindsym $mod+k exec swaync-client -t -sw
 output '*' bg ~/.config/sway/wallpaper.jpg fill
 
 # qutebrowser
-for_window [app_id="qutebrowser"] border pixel 1
-
-gaps inner 0
+for_window [app_id="qutebrowser"] opacity 0.85
+for_window [app_id="foot"] opacity 0.85
+default_border pixel 1
 
 include /etc/sway/config.d/
