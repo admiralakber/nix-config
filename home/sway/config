@@ -301,10 +301,12 @@ bindsym $mod+k exec swaync-client -t -sw
 # Set wallpaper
 output '*' bg ~/.config/sway/wallpaper.jpg fill
 
-# qutebrowser
-for_window [app_id="qutebrowser"] opacity 0.85
-for_window [app_id="foot"] opacity 0.85
-for_window [class="Emacs"] opacity 0.85
+# opacity / borders
+for_window [class="mpv"] opacity 1.0
+for_window [class="imv"] opacity 1.0
+for_window [app_id=".*"] opacity 0.8
+for_window [class=".*"] opacity 0.8
+
 default_border pixel 1
 
 include /etc/sway/config.d/
