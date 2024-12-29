@@ -304,6 +304,7 @@ output '*' bg ~/.config/sway/wallpaper.jpg fill
 # qutebrowser
 for_window [app_id="qutebrowser"] opacity 0.85
 for_window [app_id="foot"] opacity 0.85
+for_window [class="Emacs"] opacity 0.85
 default_border pixel 1
 
 include /etc/sway/config.d/

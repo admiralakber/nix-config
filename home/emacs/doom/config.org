@@ -1,7 +1,7 @@
 #+title: aqeel's doom emacs config.org
 #+author: Aqeel Akber
 #+date: <2024-07-04 Thu 13:32>
-#+lastmod: [2024-12-29 Sun 20:45]
+#+lastmod: [2024-12-30 Mon 02:05]
 
 * top matter
 #+begin_src elisp
@@ -37,13 +37,6 @@
 #+begin_src elisp
 (setq display-line-numbers-type 't)
 #+end_src
-** opacity
-When running in daemon mode, we need to do the following:
-#+begin_src elisp
-(set-frame-parameter nil 'alpha-background 85)
-(add-to-list 'default-frame-alist '(alpha-background . 85))
-#+end_src
-
 
 * org-mode
 ** base setup
