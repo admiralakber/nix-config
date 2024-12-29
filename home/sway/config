@@ -286,8 +286,8 @@ bindsym $mod+k exec swaync-client -t -sw
 output '*' bg ~/.config/sway/wallpaper.jpg fill
 
 # qutebrowser
-for_window [app_id="qutebrowser"] border pixel 5
+for_window [app_id="qutebrowser"] border pixel 1
 
-gaps inner 15
+gaps inner 0
 
 include /etc/sway/config.d/

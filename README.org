@@ -1,12 +1,13 @@
 #+title: Aqeel's NixOS Configuration
 #+author: Aqeel Akber <aqeel@aqeelakber>
-#+lastmod: [2024-12-18 Wed 14:18]
+#+lastmod: [2024-12-29 Sun 20:12]
 
 * tl;dr
 - sway
 - emacs
 - oh-my-zsh
 - brave
+- qutebrowser
 - spotify
 
 * Acknowledgments
