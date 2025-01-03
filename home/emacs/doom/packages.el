@@ -61,3 +61,4 @@
    :branch "master"))
 
 (package! gptel)
+(package! base16-theme)

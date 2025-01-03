@@ -1,7 +1,7 @@
 #+title: aqeel's doom emacs config.org
 #+author: Aqeel Akber
 #+date: <2024-07-04 Thu 13:32>
-#+lastmod: [2024-12-30 Mon 02:05]
+#+lastmod: [2025-01-03 Fri 14:17]
 
 * top matter
 #+begin_src elisp
@@ -31,7 +31,7 @@
 #+end_src
 ** colour theme
 #+begin_src elisp
-(setq doom-theme 'leuven-dark)
+(setq doom-theme 'base16-3024)
 #+end_src
 ** line numbers
 #+begin_src elisp

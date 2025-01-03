@@ -30,6 +30,7 @@
     qutebrowser = {
       enable = true;
       settings = {
+        "zoom.default" = "150%";
         "colors.webpage.darkmode.enabled" = true;
         "auto_save.session" = true;
         "content.blocking.method" = "both";
