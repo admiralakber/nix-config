@@ -17,6 +17,9 @@ set $right o
 set $term foot
 # your preferred terminal editor
 set $editor emacsclient -c
+# your preferred web browser
+set $browser qutebrowser
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -171,6 +174,8 @@ exec swayidle -w \
 #
     bindsym $mod+shift+Return exec $editor
 
+# Web Browser
+    bindsym $mod+Backslash exec $browser
 
 #
 # Scratchpad:
