@@ -18,7 +18,7 @@ set $term foot
 # your preferred terminal editor
 set $editor emacsclient -c
 # your preferred web browser
-set $browser qutebrowser
+set $browser "qutebrowser --qt-flag enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -305,6 +305,7 @@ bindsym $mod+k exec swaync-client -t -sw
 
 # Set wallpaper
 output '*' bg ~/.config/sway/wallpaper.jpg fill
+exec wal -R
 
 # opacity / borders
 for_window [class="mpv"] opacity 1.0

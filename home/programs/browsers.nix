@@ -30,9 +30,12 @@
     qutebrowser = {
       enable = true;
       settings = {
-        "zoom.default" = "150%";
-        "colors.webpage.darkmode.enabled" = true;
+        "zoom.default" = "125%";
+        "colors.webpage.darkmode.enabled" = false;
         "auto_save.session" = true;
+        "qt.args" = [
+          "enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
+        ];
         "content.blocking.method" = "both";
         "content.blocking.adblock.lists" = [
           "https://easylist.to/easylist/easylist.txt"

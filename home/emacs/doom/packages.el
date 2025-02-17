@@ -62,3 +62,6 @@
 
 (package! gptel)
 (package! base16-theme)
+(package! theme-magic)
+(package! ewal)
+(package! ewal-doom-themes)

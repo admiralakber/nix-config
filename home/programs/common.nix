@@ -19,6 +19,8 @@
     rclone
     restic
     ripgrep
+    pywal
+    python3
   ];
 
 }
