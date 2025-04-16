@@ -82,6 +82,8 @@
   fonts = {
     packages = with pkgs; [
       material-design-icons
+      google-fonts
+      font-awesome
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
