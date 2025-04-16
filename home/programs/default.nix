@@ -6,5 +6,6 @@
     ./dev.nix      # hackers gonna hack
     ./media.nix    # pleasure and art
     ./xdg.nix      # setting up vars
+    ./founder-mode.nix # speed wins
   ];
 }

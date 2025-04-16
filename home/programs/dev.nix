@@ -4,7 +4,7 @@
   in {
   home.packages = with pkgs; [
     # 3d printing
-    orca-slicer
+    unstablePkgs.orca-slicer
     #openscad
     #openscad-unstable
     unstablePkgs.openscad-unstable
