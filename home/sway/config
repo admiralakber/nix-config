@@ -269,20 +269,20 @@ bindsym $mod+l exec swaylock -c 0000ff
 output eDP-1 scale 1
 
 ## Work laptop configuration
-output DP-9 pos 0 0 transform 270
-output DP-10 pos 1080 0
-output eDP-1 pos 3000 0
+# output DP-9 pos 0 0 transform 270
+# output DP-10 pos 1080 0
+# output eDP-1 pos 3000 0
 
 ## Workspace lock
 workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output DP-10
-workspace 5 output DP-10
-workspace 6 output DP-10
-workspace 7 output DP-9
-workspace 8 output DP-9
-workspace 9 output DP-9
+# workspace 2 output eDP-1
+# workspace 3 output eDP-1
+# workspace 4 output DP-10
+# workspace 5 output DP-10
+# workspace 6 output DP-10
+# workspace 7 output DP-9
+# workspace 8 output DP-9
+# workspace 9 output DP-9
 workspace 10 output eDP-1
 
 
@@ -304,7 +304,7 @@ exec swaync
 bindsym $mod+k exec swaync-client -t -sw
 
 # Set wallpaper
-output '*' bg ~/.config/sway/wallpaper.jpg fill
+output '*' bg ~/.config/sway/wallpaper.jpg fit
 exec wal -R
 
 # opacity / borders
