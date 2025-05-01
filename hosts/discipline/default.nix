@@ -1,5 +1,5 @@
 # This takes us from host firmware to linux kernel
-{ config, pkgs, hostName, ... }: {
+{ config, pkgs, hostName, inputs, ... }: {
   imports = [
     # this takes us from linux kernel to high level os
     ../../modules/system.nix
@@ -7,6 +7,9 @@
 
     # hardware scan results
     ./hardware-configuration.nix
+
+    # where discipline is
+    inputs.nixos-hardware.nixosModules.framework-13-7040-amd
   ];
 
   # Bootloader
