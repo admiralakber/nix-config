@@ -1,4 +1,32 @@
 {pkgs, lib, username, userFullName, userEmail, ...}: {
+ # Core System Applications
+  environment.systemPackages = with pkgs; [
+    # text
+    git
+    vim
+    nano
+    emacs
+    # network
+    wget
+    curl
+    # media
+    pulsemixer
+    # encryption
+    cryptsetup
+    tomb
+    gfshare
+    gnupg
+    # monitoring
+    sysstat
+    lm_sensors
+    htop
+    # system
+    rtkit
+  ];
+
+  # Enable the system-wide RealtimeKit daemon
+  security.rtkit.enable = true;
+  
   # Shells
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -51,10 +79,11 @@
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
+    wireplumber.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
+    jack.enable = false;
   };
 
   # Networking
@@ -99,7 +128,6 @@
   };
 
   # Security
-  security.rtkit.enable = true;
   security.polkit.enable = true;
 
   # Laptop
@@ -107,28 +135,5 @@
   services.power-profiles-daemon = {
     enable = true;
   };
-
-  # Core System Applications
-  environment.systemPackages = with pkgs; [
-    # text
-    git
-    vim
-    nano
-    emacs
-    # network
-    wget
-    curl
-    # media
-    pulsemixer
-    # encryption
-    cryptsetup
-    tomb
-    gfshare
-    gnupg
-    # monitoring
-    sysstat
-    lm_sensors
-    htop
-  ];
 
 }

@@ -9,6 +9,8 @@
       "wheel"
       "podman"
       "libvirtd"
+      "audio"
+      "realtime"
     ];
     subUidRanges = [
       { startUid = 100000; count = 65536; }
