@@ -4,6 +4,7 @@
     # this takes us from linux kernel to high level os
     ../../modules/system.nix
     ../../modules/sway.nix
+    ../../modules/pipewire-tuning.nix
 
     # hardware scan results
     ./hardware-configuration.nix

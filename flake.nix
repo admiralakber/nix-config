@@ -36,10 +36,6 @@
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }
 
-          ./modules/system.nix
-          ./modules/pipewire-tuning.nix
-          ./modules/fonts.nix
-
         ];
       };
     };
