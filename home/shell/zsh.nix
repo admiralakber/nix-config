@@ -10,7 +10,9 @@
       ''
       cat /home/brat/.cache/wal/sequences
       '';
-    initExtra = "";
+    initExtra =
+    ''
+    '';
     shellAliases = {
       update = "sudo nixos-rebuild switch";
       restic = "AWS_SECRET_ACCESS_KEY=$(pass personal/B2_SECRET_ACCESS_KEY) AWS_ACCESS_KEY_ID=$(pass personal/B2_ACCESS_KEY_ID) RESTIC_PASSWORD=$(pass personal/RESTIC_PASSWORD) RESTIC_REPOSITORY=$(pass personal/RESTIC_REPOSITORY) restic";

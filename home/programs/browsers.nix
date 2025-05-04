@@ -8,16 +8,18 @@
     chromium = {
       enable = true;
       commandLineArgs = [
-        "--enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlatform"
+        "--enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlatform,WebRTCPipeWireCapturer"
         "--ozone-platform=wayland"
+        "--use-pipewire-for-audio"
       ];
     };
 
     brave = {
       enable = true;
       commandLineArgs = [
-        "--enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlatform"
+        "--enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlatform,WebRTCPipeWireCapturer"
         "--ozone-platform=wayland"
+        "--use-pipewire-for-audio"
       ];
     };
 
@@ -26,15 +28,15 @@
       profiles.${username} = {};
     };
 
-    # qutebroser
     qutebrowser = {
       enable = true;
       settings = {
-        "zoom.default" = "125%";
+        "zoom.default" = "100%";
         "colors.webpage.darkmode.enabled" = false;
         "auto_save.session" = true;
         "qt.args" = [
-          "enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
+          "--enable-features=UseOzonePlatform"
+          "--ozone-platform=wayland"
         ];
         "content.blocking.method" = "both";
         "content.blocking.adblock.lists" = [
