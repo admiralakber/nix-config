@@ -24,6 +24,9 @@
     rtkit
   ];
 
+  # nix-ld makes development easier
+  programs.nix-ld.enable = true;
+
   # Enable the system-wide RealtimeKit daemon
   security.rtkit.enable = true;
   
@@ -97,6 +100,7 @@
   };
 
   # SSH
+  programs.ssh.startAgent = true;
   services.openssh = {
     enable = true;
     settings = {
