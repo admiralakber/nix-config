@@ -6,7 +6,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history.size = 10000;
-    initExtraFirst =
+    initContent = pkgs.lib.mkBefore
       ''
       cat /home/brat/.cache/wal/sequences
       '';

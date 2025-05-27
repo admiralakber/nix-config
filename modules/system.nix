@@ -79,7 +79,7 @@
   services.printing.enable = false;
 
   # Sound
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     wireplumber.enable = true;
@@ -120,7 +120,9 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono" "Inconsolata"]; })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.inconsolata
     ];
     enableDefaultPackages = false; # set to false for user specified fonts
     fontconfig.defaultFonts = {

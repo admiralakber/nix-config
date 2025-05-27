@@ -10,10 +10,10 @@
   
   in {
   home.packages = with pkgs; [
-    kdenlive
+    kdePackages.kdenlive
     discord
     slack
-    code-cursor
+    unstablePkgs.code-cursor
 
     # python
     uv
@@ -26,5 +26,10 @@
     postgresql_17_jit # phoenix
     inotify-tools # liveview
     libnotify # exunit notifier
+
+
+    # klowd
+    google-cloud-sdk
+
   ];
   }
