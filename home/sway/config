@@ -304,7 +304,7 @@ exec swaync
 bindsym $mod+k exec swaync-client -t -sw
 
 # Set wallpaper
-output '*' bg ~/.config/sway/wallpaper.jpg fit
+output '*' bg ~/.config/sway/wallpaper.jpg fill
 exec wal -R
 
 # opacity / borders

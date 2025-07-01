@@ -32,7 +32,7 @@ in {
 
     qutebrowser = {
       enable = true;
-      package = unstablePkgs.qutebrowser;
+      package = pkgs.qutebrowser;
       settings = {
         "zoom.default" = "100%";
         "colors.webpage.darkmode.enabled" = false;

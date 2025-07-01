@@ -17,6 +17,10 @@
     gitflow
     koji
     git-cliff
+    gnumake
+    gcc
+    cmake
+    libtool
 
     # artificial intelligence
     #unstablePkgs.ollama

@@ -7,6 +7,7 @@
     gimp
     inkscape
     playerctl
+    easyeffects
   ];
 
   programs = {

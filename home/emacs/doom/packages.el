@@ -65,3 +65,4 @@
 (package! theme-magic)
 (package! ewal)
 (package! ewal-doom-themes)
+(package! protobuf-mode)
