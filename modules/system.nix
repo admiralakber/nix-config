@@ -123,6 +123,7 @@
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.inconsolata
+      gyre-fonts
     ];
     enableDefaultPackages = false; # set to false for user specified fonts
     fontconfig.defaultFonts = {

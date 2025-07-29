@@ -11,7 +11,12 @@
   in {
 
   home.packages = with pkgs; [
+    ffmpeg
     kdePackages.kdenlive
+    openshot-qt
+    #davinci-resolve
+    shotcut
+    blender
     discord
     slack
     unstablePkgs.code-cursor
@@ -78,5 +83,15 @@
 
     # rust
     cargo-ndk
+
+    # react native dev
+    nodejs_24
+    jdk17
+    android-studio
+    android-tools
+    watchman
+    git
+    yarn
+    pnpm
   ];
   }
